@@ -56,7 +56,6 @@ line-height:1.6;
 
 
 button{
-
 padding:15px 30px;
 border:none;
 border-radius:50px;
@@ -66,7 +65,6 @@ font-weight:bold;
 cursor:pointer;
 background:white;
 color:#ff416c;
-
 }
 
 
@@ -82,10 +80,8 @@ display:none;
 
 
 #envelope h1{
-
 font-size:90px;
 animation:pulse 1.5s infinite;
-
 }
 
 
@@ -161,6 +157,15 @@ border:4px solid #ffd700;
 
 
 
+video{
+
+width:100%;
+border-radius:25px;
+border:4px solid #ffd700;
+
+}
+
+
 </style>
 
 </head>
@@ -181,14 +186,12 @@ Une surprise spéciale vous attend Jeania… 🧚❤️
 </h2>
 
 <p>
-Une petite fée a préparé une invitation pour sa princesse 👑
+Une petite fée a préparé quelque chose pour sa princesse 👑
 </p>
-
 
 <button onclick="ouvrir()">
 Ouvrir mon invitation 💖
 </button>
-
 
 </div>
 
@@ -230,13 +233,9 @@ J’ai envie d’en construire encore plus avec toi. ❤️
 
 
 <h2>
-
 Acceptez-vous mon invitation et faites de moi l’homme le plus heureux de ce weekend ?
-
 Une grosse surprise vous attend ❤️‍🔥
-
 </h2>
-
 
 
 <button onclick="oui()">
@@ -256,7 +255,6 @@ Non 😳
 
 
 <div class="card hidden" id="non">
-
 
 <h1>
 😳 Tu es sûre ?
@@ -287,7 +285,7 @@ Youpi !!! J’ai hâte de vous retrouver baby Mama ❤️‍🔥❤️❤️
 
 
 <p>
-Préparez-vous pour une grosse surprise 👑✨
+Une belle surprise vous attend 👑✨
 </p>
 
 
@@ -310,7 +308,7 @@ Découvrir la surprise ❤️
 </h1>
 
 
-<img class="main-photo" src="photo1.jpg">
+<img class="main-photo" src="photo1.JPG">
 
 
 <p>
@@ -323,36 +321,59 @@ Des milliers de je t’aime ❤️
 </p>
 
 
-
 <h2>
-Quelques souvenirs de nous ❤️
+Quelques souvenirs de nous 📸❤️
 </h2>
 
 
 <div class="gallery">
 
-<img src="photo1.jpg">
+<img src="photo1.JPG">
 
 <img src="photo2.JPG">
 
-<img src="photo3.JPG">
+<img src="photo3.HEIC">
 
 </div>
-
 
 
 <br>
 
 
-<audio id="music" src="musique.mp3"></audio>
-
-
-<button onclick="playMusic()">
-🎵 Lancer notre chanson ❤️
+<button onclick="ouvrirVideo()">
+🎥 Lire ma vidéo surprise ❤️
 </button>
 
 
 </div>
+
+
+
+
+
+
+<div class="card hidden" id="videoPage">
+
+
+<h1>
+🎥 Une surprise pour vous ❤️
+</h1>
+
+
+<p>
+J’ai préparé cette vidéo spécialement pour vous 🥹❤️
+</p>
+
+
+<video controls>
+
+<source src="surprise.mp4" type="video/mp4">
+
+</video>
+
+
+</div>
+
 
 
 
@@ -374,7 +395,6 @@ animation();
 
 
 
-
 function oui(){
 
 document.getElementById("home").style.display="none";
@@ -387,7 +407,6 @@ animation();
 
 
 
-
 function non(){
 
 document.getElementById("home").style.display="none";
@@ -395,7 +414,6 @@ document.getElementById("home").style.display="none";
 document.getElementById("non").style.display="block";
 
 }
-
 
 
 
@@ -411,13 +429,13 @@ animation();
 
 
 
+function ouvrirVideo(){
 
-function playMusic(){
+document.getElementById("final").style.display="none";
 
-document.getElementById("music").play();
+document.getElementById("videoPage").style.display="block";
 
 }
-
 
 
 
@@ -433,7 +451,6 @@ let emojis=[
 
 
 for(let i=0;i<60;i++){
-
 
 let element=document.createElement("div");
 
@@ -453,16 +470,14 @@ element.style.animationDuration=
 
 document.body.appendChild(element);
 
-
 }
 
-
 }
-
 
 
 </script>
 
 
 </body>
+
 </html>
