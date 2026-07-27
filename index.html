@@ -273,195 +273,26 @@ Oui ❤️
 </button>
 
 
-</div><!DOCTYPE html>
-<html lang="fr">
-<head>
+</div><div class="card hidden" id="oui">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Pour Jeania ❤️</title>
-
-<style>
-
-*{
-box-sizing:border-box;
-}
-
-body{
-margin:0;
-min-height:100vh;
-background:linear-gradient(135deg,#ff416c,#ff4b2b,#d4af37);
-font-family:Georgia,serif;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow:hidden;
-color:white;
-text-align:center;
-}
-
-
-.card{
-width:90%;
-max-width:600px;
-padding:35px;
-border-radius:30px;
-background:rgba(255,255,255,0.18);
-backdrop-filter:blur(15px);
-box-shadow:0 0 40px rgba(0,0,0,0.3);
-}
-
-
-h1{
-font-size:38px;
-color:#fff4d6;
-}
-
-
-h2{
-color:#ffe4e1;
-}
-
-
-p{
-font-size:20px;
-line-height:1.6;
-}
-
-
-button{
-
-padding:15px 30px;
-border:none;
-border-radius:50px;
-margin:10px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-background:white;
-color:#ff416c;
-
-}
-
-
-button:hover{
-transform:scale(1.08);
-}
-
-
-.hidden{
-display:none;
-}
-
-
-
-#envelope h1{
-
-font-size:90px;
-animation:pulse 1.5s infinite;
-
-}
-
-
-@keyframes pulse{
-
-0%{
-transform:scale(1);
-}
-
-50%{
-transform:scale(1.2);
-}
-
-100%{
-transform:scale(1);
-}
-
-}
-
-
-
-.floating{
-
-position:absolute;
-font-size:30px;
-animation:fall 6s linear infinite;
-
-}
-
-
-@keyframes fall{
-
-0%{
-transform:translateY(-10vh);
-}
-
-100%{
-transform:translateY(110vh);
-}
-
-}
-
-
-
-.gallery{
-
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-
-}
-
-
-.gallery img{
-
-width:30%;
-min-width:100px;
-border-radius:20px;
-border:3px solid #ffd700;
-
-}
-
-
-
-.main-photo{
-
-width:90%;
-border-radius:25px;
-border:4px solid #ffd700;
-
-}
-
-
-
-</style>
-
-</head>
-
-
-<body>
-
-
-
-<div class="card" id="envelope">
 
 <h1>
-💌
+🌹 YES YES YES 🌹
 </h1>
 
-<h2>
-Une surprise spéciale vous attend Jeania… 🧚❤️
-</h2>
 
 <p>
-Une petite fée a préparé une invitation pour sa princesse 👑
+Youpi !!! J’ai hâte de vous retrouver baby Mama ❤️‍🔥❤️❤️
 </p>
 
 
-<button onclick="ouvrir()">
-Ouvrir mon invitation 💖
+<p>
+Préparez-vous pour une grosse surprise 👑✨
+</p>
+
+
+<button onclick="finalPage()">
+Découvrir la surprise ❤️
 </button>
 
 
@@ -471,56 +302,53 @@ Ouvrir mon invitation 💖
 
 
 
-<div class="card hidden" id="home">
+<div class="card hidden" id="final">
 
 
 <h1>
-Jeania Sonkwe ❤️
+🎉 Félicitations ma princesse 👑❤️
 </h1>
 
 
-<h2>
-Jeania, j’ai quelque chose de spécial pour vous… 🧚❤️
-</h2>
+<img class="main-photo" src="photo1.jpg">
 
 
 <p>
-J’ai prévu de te voler un peu de ton temps 😉.
+Je suis très heureux de vous retrouver 🥹❤️
 </p>
 
 
 <p>
-J’aimerais t’inviter à passer un moment avec moi, loin du quotidien, juste nous deux.
+Des milliers de je t’aime ❤️
 </p>
 
-
-<p>
-Je veux profiter de ton sourire, de nos discussions et de cette complicité qu’on a. ❤️
-</p>
-
-
-<p>
-J’ai envie d’en construire encore plus avec toi. ❤️
-</p>
 
 
 <h2>
-
-Acceptez-vous mon invitation et faites de moi l’homme le plus heureux de ce weekend ?
-
-Une grosse surprise vous attend ❤️‍🔥
-
+Quelques souvenirs de nous ❤️
 </h2>
 
 
+<div class="gallery">
 
-<button onclick="oui()">
-Oui je le veux 🥹❤️
-</button>
+<img src="photo1.jpg">
+
+<img src="photo2.jpg">
+
+<img src="photo3.jpg">
+
+</div>
 
 
-<button onclick="non()">
-Non 😳
+
+<br>
+
+
+<audio id="music" src="musique.mp3"></audio>
+
+
+<button onclick="playMusic()">
+🎵 Lancer notre chanson ❤️
 </button>
 
 
@@ -530,22 +358,111 @@ Non 😳
 
 
 
-<div class="card hidden" id="non">
+
+<script>
 
 
-<h1>
-😳 Tu es sûre ?
-</h1>
+function ouvrir(){
+
+document.getElementById("envelope").style.display="none";
+
+document.getElementById("home").style.display="block";
+
+animation();
+
+}
 
 
-<p>
-Cette invitation a été préparée spécialement pour vous ❤️
-</p>
 
 
-<button onclick="oui()">
-Oui ❤️
-</button>
+function oui(){
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("oui").style.display="block";
+
+animation();
+
+}
 
 
-</div>
+
+
+function non(){
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("non").style.display="block";
+
+}
+
+
+
+
+function finalPage(){
+
+document.getElementById("oui").style.display="none";
+
+document.getElementById("final").style.display="block";
+
+animation();
+
+}
+
+
+
+
+function playMusic(){
+
+document.getElementById("music").play();
+
+}
+
+
+
+
+function animation(){
+
+let emojis=[
+"❤️",
+"🌹",
+"🌸",
+"💖",
+"✨"
+];
+
+
+for(let i=0;i<60;i++){
+
+
+let element=document.createElement("div");
+
+element.className="floating";
+
+element.innerHTML=
+emojis[Math.floor(Math.random()*emojis.length)];
+
+
+element.style.left=
+Math.random()*100+"%";
+
+
+element.style.animationDuration=
+(3+Math.random()*5)+"s";
+
+
+document.body.appendChild(element);
+
+
+}
+
+
+}
+
+
+
+</script>
+
+
+</body>
+</html>
