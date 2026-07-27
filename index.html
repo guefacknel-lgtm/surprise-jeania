@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Une surprise pour Jeania ❤️</title>
+
+<style>
+body {
+    margin:0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg,#ff9a9e,#ff4b5c);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+    overflow:hidden;
+}
+
+.container {
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:25px;
+    width:90%;
+    max-width:500px;
+    box-shadow:0 0 30px rgba(0,0,0,.2);
+}
+
+h1 {
+    font-size:32px;
+}
+
+p {
+    font-size:20px;
+    line-height:1.5;
+}
+
+button {
+    padding:15px 25px;
+    margin:10px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+    background:white;
+    color:#ff416c;
+    font-weight:bold;
+}
+
+button:hover {
+    transform:scale(1.05);
+}
+
+.heart {
+    position:absolute;
+    animation:float 6s infinite;
+    font-size:25px;
+}
+
+@keyframes float {
+    0% {transform:translateY(100vh);}
+    100% {transform:translateY(-10vh);}
+}
+
+#surprise {
+    display:none;
+}
+
+img {
+    width:100%;
+    border-radius:20px;
+    margin-top:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+J’ai quelque chose à vous demander,<br>
+ma petite fée 🧚❤️
+</h1>
+
+<p>
+Jeania Sonkwe ❤️
+</p>
+
+<p>
+Je veux passer un weekend mémorable avec vous, princesse 👑
+</p>
+
+<p>
+Me permettez-vous un date avec la sublime princesse que vous êtes ? ❤️❤️❤️
+</p>
+
+
+<button onclick="oui()">
+Yes yes yes, youpi 🥹❤️
+</button>
+
+<button onclick="non()">
+Tu es sûre ? 😳
+</button>
+
+
+<div id="surprise">
+
+<h2>
+🥹❤️
+</h2>
+
+<p>
+Yes !!! Je suis très heureux de vous retrouver 🥹🥹<br><br>
+J’ai hâte de partager ce moment avec vous ❤️
+</p>
+
+<p>
+Des milliers de je t’aime ❤️
+</p>
+
+<!-- Ajoute tes photos ici -->
+<!-- Exemple :
+<img src="photo.jpg">
+-->
+
+</div>
+
+</div>
+
+
+<script>
+
+function oui(){
+document.getElementById("surprise").style.display="block";
+coeurs();
+}
+
+function non(){
+alert("Réfléchissez encore ma petite fée 🧚❤️");
+}
+
+function coeurs(){
+for(let i=0;i<30;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"%";
+h.style.animationDuration=(Math.random()*3+3)+"s";
+document.body.appendChild(h);
+}
+}
+
+</script>
+
+</body>
+</html>
