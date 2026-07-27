@@ -3,70 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Une surprise pour Jeania ❤️</title>
 
 <style>
 body {
     margin:0;
-    font-family: 'Georgia', serif;
-    background: linear-gradient(135deg,#ff9a9e,#ff4b5c);
+    font-family:Georgia, serif;
+    background:linear-gradient(135deg,#ff758c,#ff2e63);
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
+    overflow:hidden;
     color:white;
     text-align:center;
-    overflow:hidden;
 }
 
 .container {
-    background:rgba(255,255,255,0.15);
+    background:rgba(255,255,255,0.18);
     backdrop-filter:blur(10px);
     padding:30px;
     border-radius:25px;
     width:90%;
-    max-width:500px;
-    box-shadow:0 0 30px rgba(0,0,0,.2);
+    max-width:550px;
 }
 
 h1 {
-    font-size:32px;
+    font-size:30px;
 }
 
 p {
-    font-size:20px;
-    line-height:1.5;
+    font-size:19px;
+    line-height:1.6;
 }
 
 button {
-    padding:15px 25px;
-    margin:10px;
     border:none;
+    padding:15px 25px;
     border-radius:30px;
+    margin:10px;
     font-size:18px;
     cursor:pointer;
     background:white;
-    color:#ff416c;
+    color:#ff2e63;
     font-weight:bold;
 }
 
-button:hover {
-    transform:scale(1.05);
-}
-
-.heart {
-    position:absolute;
-    animation:float 6s infinite;
-    font-size:25px;
-}
-
-@keyframes float {
-    0% {transform:translateY(100vh);}
-    100% {transform:translateY(-10vh);}
-}
-
-#surprise {
+.hidden {
     display:none;
+}
+
+.flower {
+    position:absolute;
+    font-size:30px;
+    animation:fall 5s linear infinite;
+}
+
+@keyframes fall {
+    from {
+        transform:translateY(-10vh);
+    }
+    to {
+        transform:translateY(110vh);
+    }
 }
 
 img {
@@ -74,26 +74,41 @@ img {
     border-radius:20px;
     margin-top:20px;
 }
+
 </style>
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="container" id="page1">
 
 <h1>
-J’ai quelque chose à vous demander,<br>
-ma petite fée 🧚❤️
+Jeania Sonkwe ❤️
 </h1>
 
 <p>
-Jeania Sonkwe ❤️
+J’ai prévu de te voler un peu de ton temps 😉.
 </p>
 
 <p>
-Je veux passer un weekend mémorable avec vous, princesse 👑
+J’aimerais t’inviter à passer un moment avec moi, loin du quotidien, juste nous deux.
 </p>
+
+<p>
+Je veux profiter de ton sourire, de nos discussions et de cette complicité qu’on a. ❤️
+</p>
+
+<p>
+J’ai envie d’en construire encore plus avec toi. ❤️
+</p>
+
+
+<h2>
+Acceptez-vous mon invitation et faites de moi l’homme le plus heureux de ce weekend ? 
+Mais attention… une grosse surprise vous attend ❤️‍🔥
+</h2>
+
 
 <p>
 Me permettez-vous un date avec la sublime princesse que vous êtes ? ❤️❤️❤️
@@ -101,23 +116,67 @@ Me permettez-vous un date avec la sublime princesse que vous êtes ? ❤️❤�
 
 
 <button onclick="oui()">
-Yes yes yes, youpi 🥹❤️
+Oui je le veux 🥹🥹
 </button>
+
 
 <button onclick="non()">
-Tu es sûre ? 😳
+Non
 </button>
 
+</div>
 
-<div id="surprise">
 
-<h2>
-🥹❤️
-</h2>
+
+<div class="container hidden" id="oui">
+
+<h1>
+🌹❤️ YES YES YES ❤️🌹
+</h1>
 
 <p>
-Yes !!! Je suis très heureux de vous retrouver 🥹🥹<br><br>
-J’ai hâte de partager ce moment avec vous ❤️
+Youpi !!! J’ai hâte de vous retrouver baby Mama ❤️‍🔥❤️❤️
+</p>
+
+<p>
+Une nouvelle aventure commence 🥹
+</p>
+
+<button onclick="felicitation()">
+Découvrir la surprise 💖
+</button>
+
+</div>
+
+
+
+
+<div class="container hidden" id="non">
+
+<h1>
+😳 Tu es sûre ?
+</h1>
+
+<p>
+Cette invitation a été préparée spécialement pour vous ❤️
+</p>
+
+<button onclick="oui()">
+Oui ❤️
+</button>
+
+</div>
+
+
+
+<div class="container hidden" id="felicitation">
+
+<h1>
+🎉 Félicitations ❤️🌹
+</h1>
+
+<p>
+Je suis tellement heureux de vous retrouver.
 </p>
 
 <p>
@@ -126,34 +185,64 @@ Des milliers de je t’aime ❤️
 
 <!-- Ajoute tes photos ici -->
 <!-- Exemple :
-<img src="photo.jpg">
+<img src="photo1.jpg">
 -->
 
 </div>
 
-</div>
 
 
 <script>
 
 function oui(){
-document.getElementById("surprise").style.display="block";
-coeurs();
+
+document.getElementById("page1").style.display="none";
+document.getElementById("non").style.display="none";
+document.getElementById("oui").style.display="block";
+
+fleurs();
+
 }
+
 
 function non(){
-alert("Réfléchissez encore ma petite fée 🧚❤️");
+
+document.getElementById("page1").style.display="none";
+document.getElementById("non").style.display="block";
+
 }
 
-function coeurs(){
-for(let i=0;i<30;i++){
-let h=document.createElement("div");
-h.className="heart";
-h.innerHTML="❤️";
-h.style.left=Math.random()*100+"%";
-h.style.animationDuration=(Math.random()*3+3)+"s";
-document.body.appendChild(h);
+
+function felicitation(){
+
+document.getElementById("oui").style.display="none";
+document.getElementById("felicitation").style.display="block";
+
+fleurs();
+
 }
+
+
+function fleurs(){
+
+for(let i=0;i<50;i++){
+
+let f=document.createElement("div");
+
+f.className="flower";
+
+let emojis=["🌹","🌸","❤️","💖","🌺"];
+
+f.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+
+f.style.left=Math.random()*100+"%";
+
+f.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(f);
+
+}
+
 }
 
 </script>
